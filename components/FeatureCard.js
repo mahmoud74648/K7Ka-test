@@ -1,12 +1,16 @@
-import styles from '../styles/Home.module.css'
-
 export default function FeatureCard({ title, text, variant }) {
+    const isWarm = variant === 'pink'
+
     return (
-        <article className={`${styles.card} ${variant === 'pink' ? styles.cardPink : styles.cardSky}`}>
-            <h2 className={`${styles.cardTitle} ${variant === 'pink' ? styles.cardTitlePink : styles.cardTitleSky}`}>
+        <article
+            className={`rounded-2xl border bg-white p-6 shadow-card transition hover:-translate-y-1 ${
+                isWarm ? 'border-brand-orange/40' : 'border-brand-blue/40'
+            }`}
+        >
+            <h2 className={`mb-3 text-2xl font-bold ${isWarm ? 'text-brand-orange' : 'text-brand-blue'}`}>
                 {title}
             </h2>
-            <p className={styles.cardText}>{text}</p>
+            <p className="text-base leading-8 text-brand-textSecondary">{text}</p>
         </article>
     )
 }

@@ -1,51 +1,53 @@
-import styles from '../styles/Home.module.css'
-
 const sections = [
     {
-        title: 'Women Empowerment',
-        content: 'Together we rise, together we thrive. Empowering women to create a better future for all.',
+        title: 'عن كحكه',
+        content: 'منصة صحفية عربية تسلط الضوء على تفاصيل الحياة الأسرية وتأثيرها النفسي والاجتماعي.',
     },
     {
-        title: 'Quick Links',
-        links: ['About Us', 'Our Mission', 'Get Involved', 'Resources'],
+        title: 'روابط سريعة',
+        links: ['الرئيسية', 'التحقيق', 'فريق العمل', 'تواصل معنا'],
     },
     {
-        title: 'Connect With Us',
-        links: ['Facebook', 'Instagram', 'Twitter', 'LinkedIn'],
+        title: 'تابعنا',
+        links: ['Facebook', 'Instagram', 'X', 'YouTube'],
     },
     {
-        title: 'Contact',
+        title: 'التواصل',
         contactLines: [
-            'info@womenempowerment.org',
-            '+1 (555) 123-4567',
-            '123 Empowerment Ave',
-            'Suite 100, City, State 12345',
+            'info@kahkah.com',
+            '+20 10 0000 0000',
+            'القاهرة - مصر',
+            'نعمل يوميًا من 9 ص إلى 6 م',
         ],
     },
 ]
 
 export default function Footer() {
     return (
-        <footer className={styles.footer}>
-            <div className={styles.footerContent}>
-                <div className={styles.footerMain}>
+        <footer className="relative z-10 mt-20 border-t border-brand-brown/10 bg-brand-beige py-12" dir="rtl">
+            <div className="mx-auto w-full  px-4 sm:px-8">
+                <div className="mb-10 grid grid-cols-1 gap-10 md:grid-cols-2 xl:grid-cols-4">
                     {sections.map((section) => (
-                        <div key={section.title} className={styles.footerSection}>
-                            <h4 className={styles.footerSubtitle}>{section.title}</h4>
-                            {section.content && <p className={styles.footerText}>{section.content}</p>}
+                        <div key={section.title}>
+                            <h4 className="mb-4 text-lg font-bold text-brand-brown">{section.title}</h4>
+                            {section.content && <p className="text-sm leading-7 text-brand-textSecondary">{section.content}</p>}
                             {section.links && (
-                                <div className={styles.footerLinks}>
+                                <div className="flex flex-col gap-2.5">
                                     {section.links.map((link) => (
-                                        <a key={link} href="#" className={styles.footerLink}>
+                                        <a
+                                            key={link}
+                                            href="#"
+                                            className="text-sm text-brand-textSecondary transition hover:text-brand-orange"
+                                        >
                                             {link}
                                         </a>
                                     ))}
                                 </div>
                             )}
                             {section.contactLines && (
-                                <div className={styles.footerLinks}>
+                                <div className="flex flex-col gap-2">
                                     {section.contactLines.map((line) => (
-                                        <p key={line} className={styles.footerText}>
+                                        <p key={line} className="text-sm text-brand-textSecondary">
                                             {line}
                                         </p>
                                     ))}
@@ -54,9 +56,9 @@ export default function Footer() {
                         </div>
                     ))}
                 </div>
-                <div className={styles.footerBottom}>
-                    <p className={styles.footerCopyright}>
-                        © 2024 Women Empowerment. All rights reserved. | Privacy Policy | Terms of Service
+                <div className="border-t border-brand-brown/20 pt-6">
+                    <p className="text-center text-sm text-brand-textLight">
+                        © 2026 كحكه - جميع الحقوق محفوظة
                     </p>
                 </div>
             </div>
