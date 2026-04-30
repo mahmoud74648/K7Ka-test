@@ -13,38 +13,42 @@ export default function NavBar() {
 
     const links = [
         { href: '/', label: 'الرئيسية' },
-        { href: '/alaaqa', label: 'علاقة الأم بالمنزل' },
-        { href: '/sawtoha-masmoua', label: 'صوتها مسموع' },
-        { href: '/bayn-albayt-walshoghl', label: 'بين البيت والشغل' },
+        { href: '/sawtoha-masmoua', label: 'التحقيقات' },
+        { href: '/gowa-alkahka', label: 'بودكاست' },
+        { href: '/ala-alhamesh', label: 'التقارير' },
+        { href: '/hikayat-settat', label: 'الحوارات' },
         { href: '/kalam-qanun', label: 'كلام قانون' },
-        { href: '/hikayat-settat', label: 'حكايات ستات' },
-        { href: '/gowa-alkahka', label: 'جوه الكحكة' },
-        { href: '/bara-alkahka', label: 'بره الكحكة' },
-        { href: '/ala-alhamesh', label: 'على الهامش' },
     ]
 
     return (
         <nav
-            className="sticky top-0 z-50 mb-8 w-full border-b border-brand-brown/15 bg-brand-offwhite/95 shadow-[0_10px_30px_rgba(59,42,30,0.1)] backdrop-blur-md"
+            className="sticky top-0 z-50 mb-8 w-full border-b border-brand-purple/10 bg-white/95 shadow-[0_10px_30px_rgba(90,62,155,0.08)] backdrop-blur-md"
             dir="rtl"
             aria-label="التنقل الرئيسي"
         >
             <div className="mx-auto w-full px-4 py-3 sm:px-8">
                 <div className="flex items-center justify-between gap-3">
-                    <Link href="/" className="group inline-flex items-center rounded-md transition hover:opacity-90">
-                        <div className="relative h-12 w-44 overflow-hidden sm:w-52">
-                            <Image src="/imgs/logo-edited.png" alt="شعار كحكه" fill className="object-contain" priority />
+                    <Link href="/" className="group inline-flex items-center transition-transform hover:scale-105 active:scale-95">
+                        <div className="">
+                             <div className="relative h-12 w-16 overflow-hidden rounded-full border-2 border-brand-purple/20 bg-white shadow-inner">
+                                <Image 
+                                    src="/imgs/newlogo.png" 
+                                    alt="كحكة Logo" 
+                                    layout="fill"
+                                    objectFit="contain"
+                                    className="p-1 rounded-full"
+                                />
+                             </div>
                         </div>
                     </Link>
                     <div className="hidden sm:block">
-                        <h1 className="text-sm font-extrabold tracking-wide text-brand-brown">كحكة</h1>
-                        <p className="text-xs text-brand-brown/70">مساحة للحكاية والصوت</p>
+                        <h1 className="text-sm font-bold tracking-wide text-brand-purpleMedium italic">كحكة.. شغل وبيت وحياة</h1>
                     </div>
 
                     <button
                         type="button"
                         onClick={() => setIsMenuOpen((prev) => !prev)}
-                        className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-brand-brown/20 bg-white/70 text-brand-brown transition hover:border-brand-orange hover:text-brand-orange md:hidden"
+                        className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-brand-purple/20 bg-brand-offwhite text-brand-purple transition hover:border-brand-pinkAccent hover:text-brand-pinkAccent md:hidden"
                         aria-expanded={isMenuOpen}
                         aria-controls="mobile-nav-menu"
                         aria-label={isMenuOpen ? 'إغلاق القائمة' : 'فتح القائمة'}
@@ -70,10 +74,10 @@ export default function NavBar() {
                                 key={link.href}
                                 href={link.href}
                                 aria-current={isActive ? 'page' : undefined}
-                                className={`rounded-full px-4 py-2 text-sm font-bold transition ${
+                                className={`rounded-full px-5 py-2 text-sm font-bold transition-all duration-300 ${
                                     isActive
-                                        ? 'bg-brand-brown text-brand-offwhite shadow-[0_6px_16px_rgba(90,56,37,0.28)]'
-                                        : 'text-brand-brown hover:bg-brand-beige hover:text-brand-orange'
+                                        ? 'bg-brand-purple text-white shadow-[0_6px_16px_rgba(90,62,155,0.25)]'
+                                        : 'text-brand-purple hover:bg-brand-purpleLight/20 hover:text-brand-purpleMedium'
                                 }`}
                             >
                                 {link.label}
@@ -97,8 +101,8 @@ export default function NavBar() {
                                     aria-current={isActive ? 'page' : undefined}
                                     className={`rounded-xl px-3 py-2.5 text-sm font-bold transition ${
                                         isActive
-                                            ? 'bg-brand-brown text-brand-offwhite'
-                                            : 'text-brand-brown hover:bg-brand-beige hover:text-brand-orange'
+                                            ? 'bg-brand-purple text-white'
+                                            : 'text-brand-purple hover:bg-brand-purpleLight/20'
                                     }`}
                                 >
                                     {link.label}

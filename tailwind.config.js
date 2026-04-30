@@ -8,16 +8,16 @@ module.exports = {
     extend: {
       colors: {
         brand: {
-          brown: '#5A3825',
-          orange: '#C96A3D',
-          orangeHover: '#A5552F',
-          gold: '#E0A96D',
-          blue: '#2E4A62',
-          offwhite: '#F7F3EF',
-          beige: '#EFE6DD',
-          textPrimary: '#3B2A1E',
-          textSecondary: '#7A6A5C',
-          textLight: '#A89B8F',
+          purple: '#5A3E9B',      // Main Brand (بنفسجي غامق)
+          purpleMedium: '#7B5CCB', // بنفسجي متوسط
+          purpleLight: '#B9A7E6',  // بنفسجي فاتح / ليلكي
+          blueViolet: '#4A90E2',   // أزرق مائل للبنفسجي
+          blueLight: '#7EC8E3',    // أزرق فاتح
+          pinkAccent: '#F48FB1',   // وردي ناعم
+          pinkSoft: '#FADADD',     // وردي فاتح جدًا
+          offwhite: '#F7F7FB',     // أوف وايت
+          grayLight: '#E0E0E0',    // رمادي خفيف
+          textDark: '#333333',     // نص غامق
         },
       },
       fontFamily: {
